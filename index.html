@@ -7,234 +7,411 @@
 <meta name="description" content="Anahias Esthetic: cosmetología especializada y depilación láser avanzada en Plaza Megaeuro. Agenda tu cita por WhatsApp al 809-783-8755.">
 <meta property="og:title" content="Anahias Esthetic">
 <meta property="og:description" content="Cosmetología especializada y depilación láser avanzada. Agenda tu cita por WhatsApp.">
+<meta property="og:image" content="logo.jpg">
+<meta name="theme-color" content="#6C755A">
+<link rel="icon" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#F6F4EE}
-a{color:#4E5438}a:hover{color:#2F3322}
+:root{
+  --olive:#6C755A; --olive-dark:#4E5438; --ink:#2F3322; --ivory:#F7F5EF; --sand:#ECE8DC; --cream:#EFEBDD; --line:#E0DCCE; --muted:#5B5F4C;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:Inter,system-ui,-apple-system,sans-serif;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-</style>
-<style>
-@media (max-width: 640px) { h1 { font-size: 44px !important; } h2 { font-size: 36px !important; } section { padding-top: 72px !important; padding-bottom: 72px !important; } #equipo > div, #codigo > div { padding: 28px !important; } }
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--olive-dark)}a:hover{color:var(--ink)}
+h1,h2,h3{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{margin:0;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--olive);font-weight:600}
+.title{font-family:var(--serif);font-weight:500;font-size:clamp(36px,5vw,54px);line-height:1.08;letter-spacing:-.3px}
+.title em{font-style:italic;color:var(--olive)}
+.lead{margin:0;font-size:17px;line-height:1.7;color:var(--muted)}
+.section{padding:112px 0}
+.section-head{display:flex;flex-direction:column;gap:14px;max-width:660px;margin-bottom:56px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;align-items:center}
+.ornament{width:56px;height:1px;background:var(--olive);opacity:.5}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;border:1px solid transparent;cursor:pointer;font-family:var(--sans)}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{flex:none}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{color:var(--ink);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
+.btn-dark{background:var(--olive-dark);color:#fff}
+.btn-dark:hover{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(47,51,34,.25)}
+.btn-line{border-color:var(--olive-dark);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--olive-dark);color:#fff}
+
+/* Encabezado */
+.header{position:sticky;top:0;z-index:50;background:rgba(247,245,239,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.brand span{display:flex;flex-direction:column;line-height:1}
+.brand b{font-family:var(--serif);font-weight:500;font-size:26px;color:var(--ink)}
+.brand small{font-size:9.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--olive);margin-top:4px}
+.nav{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-size:14.5px}
+.nav a{text-decoration:none;color:var(--ink);position:relative}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--olive);transform:scaleX(0);transition:transform .25s ease}
+.nav a:not(.btn):hover::after{transform:scaleX(1)}
+.nav .btn{min-height:44px;padding:0 20px;color:#fff}
+.nav .btn:hover{color:#fff}
+
+/* Portada */
+.hero{background:var(--olive);color:#fff;overflow:hidden;position:relative}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-top:88px;padding-bottom:96px}
+.hero-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px;position:relative;z-index:1}
+.hero .eyebrow{color:#E7E5D6}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6.4vw,76px);line-height:1.02;letter-spacing:-.5px}
+.hero h1 em{font-style:italic;color:#EFEBDD}
+.hero p.lead{color:#F1F0E8;max-width:540px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:10px;font-size:14px;color:#E7E5D6}
+.hero-facts span{display:inline-flex;align-items:center;gap:8px}
+.hero-logo{flex:1 1 360px;min-width:0;display:flex;justify-content:center;position:relative}
+.hero-logo .ring{position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.hero-logo img{position:relative;width:min(420px,80vw);aspect-ratio:1;object-fit:cover;object-position:center}
+
+/* Franja de datos */
+.strip{background:var(--ink);color:#EDEBE2}
+.strip .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0}
+.strip a,.strip div.item{display:flex;align-items:center;gap:14px;padding:22px 8px;text-decoration:none;color:#EDEBE2}
+.strip .ico{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;flex:none}
+.strip b{display:block;font-size:14px;font-weight:600;color:#fff}
+.strip small{font-size:13px;color:#C9C9BA}
+.strip a:hover b{text-decoration:underline}
+
+/* Servicios */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column;gap:12px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(47,51,34,.08);border-color:#D2CDBB}
+.card .num{font-family:var(--serif);font-size:30px;color:var(--olive);line-height:1}
+.card h3{font-size:19px;font-weight:600}
+.card p{margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
+
+/* Ofertas */
+.offers{background:var(--sand)}
+.offer{background:#fff;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);position:relative;overflow:hidden}
+.offer.featured{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}
+.offer.featured p{color:#E4E2D6}
+.offer.featured .price{color:#fff}
+.offer.featured .old{color:#C9C9BA}
+.tag{align-self:flex-start;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;background:var(--cream);color:var(--olive-dark);padding:7px 13px;border-radius:999px;font-weight:600}
+.offer.featured .tag{background:#fff;color:var(--ink)}
+.offer h3{font-size:21px;font-weight:600}
+.price-row{display:flex;align-items:baseline;gap:12px;margin:0;flex-wrap:wrap}
+.price{font-family:var(--serif);font-size:46px;font-weight:600;color:var(--ink);line-height:1}
+.old{font-size:17px;color:#7A7D6B;text-decoration:line-through}
+.per{font-size:15px;color:var(--muted)}
+.offer p{margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
+.offer .btn{align-self:flex-start;margin-top:auto}
+.offer.featured .btn{background:#fff;color:var(--ink)}
+.also{margin-top:24px;background:var(--ivory);border-radius:22px;padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.also h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.also p{margin:0;font-size:15px;color:var(--muted);line-height:1.7}
+
+/* Código */
+.code-box{max-width:780px;margin:0 auto;background:var(--olive);color:#fff;border-radius:30px;padding:56px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;position:relative;overflow:hidden}
+.code-box::before,.code-box::after{content:"";position:absolute;border:1px solid rgba(255,255,255,.14);border-radius:50%}
+.code-box::before{width:340px;height:340px;top:-170px;right:-120px}
+.code-box::after{width:260px;height:260px;bottom:-150px;left:-90px}
+.code-box > *{position:relative}
+.code-box .eyebrow{color:#E7E5D6}
+.code-box h2{font-family:var(--serif);font-weight:500;font-size:46px;line-height:1.1}
+.code-box p{margin:0;color:#F1F0E8;max-width:520px}
+#code-form{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;width:100%;max-width:540px;margin-top:8px}
+#code-input{flex:1 1 240px;min-width:0;min-height:54px;border-radius:999px;border:0;padding:0 24px;font-size:17px;font-family:var(--sans);text-transform:uppercase;letter-spacing:1.5px;color:var(--ink);outline:none}
+#code-input:focus{box-shadow:0 0 0 3px rgba(255,255,255,.45)}
+#code-form button{min-height:54px;border-radius:999px;border:0;padding:0 30px;font-size:16px;font-weight:600;background:var(--ink);color:#fff;cursor:pointer;font-family:var(--sans)}
+#code-form button:disabled{opacity:.6;cursor:default}
+#code-result{min-height:24px;font-size:16px;line-height:1.6}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Nosotras */
+.about{background:var(--sand)}
+.about .wrap{display:flex;flex-wrap:wrap;gap:56px;align-items:center}
+.about-text{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.perks{flex:1 1 420px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.perk{background:var(--ivory);border-radius:18px;padding:26px}
+.perk h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.perk p{margin:0;font-size:15px;color:var(--muted);line-height:1.6}
+
+/* Equipo */
+.team{max-width:1000px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:30px;padding:48px;display:flex;flex-wrap:wrap;align-items:center;gap:48px}
+.team img{flex:0 0 250px;width:250px;height:250px;border-radius:50%;object-fit:cover;object-position:center;margin:0 auto;box-shadow:0 0 0 8px var(--sand)}
+.team-text{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.team-text h2{font-family:var(--serif);font-weight:500;font-size:44px;line-height:1.1}
+.team-role{margin:0;font-size:15px;font-weight:600;color:var(--olive-dark)}
+.quote{margin:4px 0 0;font-family:var(--serif);font-style:italic;font-size:24px;color:var(--olive)}
+
+/* Visítanos */
+.visit{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:16px}
+.panel h2{font-family:var(--serif);font-weight:500;font-size:36px}
+.hours{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:15px;border-bottom:1px solid var(--sand);padding-bottom:12px}
+.hours b{white-space:nowrap}
+.hours:last-of-type{border-bottom:0;color:var(--muted)}
+.panel.map{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}
+.panel.map p{margin:0;color:#E4E2D6;line-height:1.6}
+.panel.map .btn{align-self:flex-start;background:#fff;color:var(--ink)}
+.panel.note p{margin:0;color:var(--muted);line-height:1.6}
+
+/* Contacto */
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact .wrap{display:flex;flex-direction:column;align-items:center;gap:22px}
+.contact img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5vw,56px);line-height:1.08}
+.contact p{margin:0;font-size:18px;color:#DCDBD0;max-width:560px}
+.contact .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:6px}
+.social a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:10px 20px;min-height:44px;display:inline-flex;align-items:center;gap:10px;font-size:14.5px;transition:background .2s ease}
+.social a:hover{background:rgba(255,255,255,.1);color:#fff}
+.footer{background:var(--ink);color:#A9AB98;border-top:1px solid #42462F;padding:24px 0;font-size:13px}
+.footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.footer nav{display:flex;gap:6px}
+.footer nav a{color:#DCDBD0;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%}
+.footer nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+
+/* Botones flotantes */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .2s ease}
+.fab a:hover{transform:scale(1.07);color:#fff}
+.fab .wa{background:#25D366}
+.fab .map{background:var(--olive-dark)}
+
+@media (max-width:760px){
+  .section{padding:80px 0}
+  .nav{gap:16px;font-size:14px}
+  .nav .hide-sm{display:none}
+  .header .wrap{flex-wrap:nowrap;min-height:68px}
+  .brand small{display:none}
+  .brand b{font-size:23px}
+  .brand img{width:42px;height:42px}
+  .fab a{width:50px;height:50px}
+  .hero .wrap{padding-top:56px;padding-bottom:64px}
+  .hero-logo{order:-1}
+  .hero-logo img{width:min(220px,60vw)}
+  .team,.code-box{padding:32px 24px}
+  .panel{padding:28px}
+}
 </style>
 </head>
 <body>
-<div style="font-family: Inter, system-ui, sans-serif; color: #2F3322; background: #F6F4EE; width: 100%">
 
-<header style="background: #F6F4EE; border-bottom: 1px solid #E2DFD3">
-<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="#inicio" style="text-decoration: none; display: flex; flex-direction: column; line-height: 1">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: #4E5438; letter-spacing: 0.5px">Anahias</span>
-<span style="font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #6B7151; margin-top: 4px">Esthetic &amp; Beauty Supplier</span>
-</a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px">
-<a href="#servicios" style="text-decoration: none">Servicios</a>
-<a href="#ofertas" style="text-decoration: none">Ofertas</a>
-<a href="#nosotros" style="text-decoration: none">Nosotras</a>
-<a href="#equipo" style="text-decoration: none">Equipo</a>
-<a href="#horario" style="text-decoration: none">Horario</a>
-<a href="#contacto" style="text-decoration: none">Contacto</a>
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener" style="text-decoration: none; background: #4E5438; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center">Agenda tu cita</a>
+<header class="header">
+<div class="wrap">
+<a class="brand" href="#inicio"><img src="logo.jpg" alt="Logo de Anahias Esthetic"><span><b>Anahias</b><small>Esthetic &amp; Beauty Supplier</small></span></a>
+<nav class="nav" aria-label="Principal">
+<a class="hide-sm" href="#servicios">Servicios</a>
+<a class="hide-sm" href="#ofertas">Ofertas</a>
+<a class="hide-sm" href="#equipo">Equipo</a>
+<a class="hide-sm" href="#visitanos">Visítanos</a>
+<a class="btn btn-dark" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener">Agenda tu cita</a>
 </nav>
 </div>
 </header>
 
-<section id="inicio" style="background: #6B7151; color: #FFFFFF">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
-<div style="flex: 1 1 520px; min-width: 0; max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #E9E7DA">Cosmetología especializada · Plaza Megaeuro</p>
-<h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 64px; line-height: 1.05">Transforma tu piel con Anahias</h1>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #F1F0E8; max-width: 620px">Tratamientos de láser y cosmetología personalizados. Somos expertas en depilación láser avanzada y en el cuidado de la piel de mujeres y hombres. Reserva tu cita y descubre la belleza que hay en ti.</p>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 8px">
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener" style="text-decoration: none; background: #FFFFFF; color: #2F3322; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center; gap: 10px">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
-Reservar por WhatsApp</a>
-<a href="#servicios" style="text-decoration: none; border: 1px solid #FFFFFF; color: #FFFFFF; padding: 16px 28px; border-radius: 999px; font-weight: 500; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Ver servicios</a>
+<section class="hero" id="inicio">
+<div class="wrap">
+<div class="hero-text">
+<p class="eyebrow">Cosmetología especializada · Plaza Megaeuro</p>
+<h1>Transforma tu piel <em>con Anahias</em></h1>
+<p class="lead">Tratamientos de láser y cosmetología personalizados. Somos expertas en depilación láser avanzada y en el cuidado de la piel de mujeres y hombres. Reserva tu cita y descubre la belleza que hay en ti.</p>
+<div class="hero-actions">
+<a class="btn btn-light" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>Reservar por WhatsApp</a>
+<a class="btn btn-ghost" href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Cómo llegar</a>
 </div>
-</div></div>
-</section>
-
-<section id="servicios" style="padding: 104px 24px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B7151">Nuestros servicios</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 48px; line-height: 1.1">Cada piel es diferente, y la tratamos así</h2>
+<div class="hero-facts">
+<span><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>L–J 8 a. m.–7 p. m. · V–S 8 a. m.–2 p. m.</span>
+<span><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Plaza Megaeuro, calle Pedro Livio Cedeño</span>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
-
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #6B7151">01</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Depilación láser avanzada</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Resultados duraderos en rostro y cuerpo con tecnología láser de última generación.</p>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #6B7151">02</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Faciales y limpieza profunda</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Limpia, hidrata y renueva tu piel con un facial adaptado a lo que necesita.</p>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #6B7151">03</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Cosmetología especializada</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Tratamientos personalizados para manchas, acné, textura y luminosidad.</p>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #6B7151">04</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Cuidado facial para hombres</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Faciales pensados para la piel masculina: limpieza, control de grasa e hidratación.</p>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #6B7151">05</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Evaluación de la piel</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Analizamos tu piel y te recomendamos el plan de tratamiento ideal.</p>
-</article>
-
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #6B7151">06</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Productos de belleza</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Productos profesionales para continuar tu rutina en casa.</p>
-</article>
-
+</div>
+<div class="hero-logo" aria-hidden="true">
+<span class="ring" style="width:118%;aspect-ratio:1;max-width:560px"></span>
+<span class="ring" style="width:96%;aspect-ratio:1;max-width:470px"></span>
+<img src="logo.jpg" alt="">
 </div>
 </div>
 </section>
 
-<section id="ofertas" style="background: #ECE9DF; padding: 104px 24px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B7151">Ofertas y paquetes</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 48px; line-height: 1.1">Aprovecha nuestras promociones</h2>
+<div class="strip">
+<div class="wrap">
+<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg></span><span><b>809-783-8755</b><small>Escríbenos por WhatsApp</small></span></a>
+<a href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></span><span><b>Plaza Megaeuro</b><small>Abrir en Google Maps</small></span></a>
+<div class="item"><span class="ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span><b>Lunes a sábado</b><small>Desde las 8:00 a. m.</small></span></div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="align-self: flex-start; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; background: #ECE9DF; color: #4E5438; padding: 6px 12px; border-radius: 999px; font-weight: 600; background: #2F3322; color: #FFFFFF">Viernes Negro · Tiempo limitado</span>
-<h3 style="margin: 0; font-size: 22px; font-weight: 600">Faciales</h3>
-<p style="margin: 0; display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 600; color: #2F3322">RD$1,500</span><span style="font-size: 17px; color: #6B6F5C; text-decoration: line-through">RD$2,000</span></p>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Regálate ese facial que llevas tiempo posponiendo: renueva tu piel y disfruta un momento solo para ti.</p>
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20un%20facial%20con%20la%20oferta%20de%20Viernes%20Negro%20%28RD%241%2C500%29." target="_blank" rel="noopener" style="text-decoration: none; background: #4E5438; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; align-self: flex-start">Reservar facial</a>
-</article>
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="align-self: flex-start; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; background: #ECE9DF; color: #4E5438; padding: 6px 12px; border-radius: 999px; font-weight: 600">Láser Soprano Titanium</span>
-<h3 style="margin: 0; font-size: 22px; font-weight: 600">Tratamiento de hongos en las uñas</h3>
-<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 600; color: #2F3322">RD$1,500</span><span style="font-size: 15px; color: #5B5F4C">por sesión</span></p>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Tratamiento láser contra la onicomicosis en manos y pies. Procedimiento rápido, sin tiempo de recuperación. Se recomienda evaluación previa.</p>
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20tratamiento%20l%C3%A1ser%20para%20hongos%20en%20las%20u%C3%B1as%20%28RD%241%2C500%20por%20sesi%C3%B3n%29." target="_blank" rel="noopener" style="text-decoration: none; background: #4E5438; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; align-self: flex-start">Reservar sesión</a>
-</article>
-<article style="background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
-<span style="align-self: flex-start; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; background: #ECE9DF; color: #4E5438; padding: 6px 12px; border-radius: 999px; font-weight: 600">Programa de puntos</span>
-<h3 style="margin: 0; font-size: 22px; font-weight: 600">Tarjeta de Fidelidad Anahias</h3>
-<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 600; color: #2F3322; line-height: 1.1">15% y hasta 50% OFF</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Cada cita suma puntos. Completa tu tarjeta y desbloquea descuentos en tus próximas visitas.</p>
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20mi%20Tarjeta%20de%20Fidelidad." target="_blank" rel="noopener" style="text-decoration: none; background: #4E5438; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; align-self: flex-start">Pedir mi tarjeta</a>
-</article>
 </div>
-<div style="background: #F6F4EE; border-radius: 20px; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
-<div style="flex: 1 1 420px; min-width: 0">
-<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">También te ofrecemos</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #5B5F4C">Depilación láser · Hidrodermoabrasión facial profunda · Oxigenación facial · Terapia de luz LED · Sonda facial · Paleta ultrasónica · Eliminación de tatuajes</p>
+
+<section class="section" id="servicios">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">Nuestros servicios</p>
+<h2 class="title">Cada piel es diferente, <em>y la tratamos así</em></h2>
+<span class="ornament"></span>
 </div>
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20saber%20los%20precios%20de%20sus%20tratamientos." target="_blank" rel="noopener" style="text-decoration: none; border: 1px solid #4E5438; color: #2F3322; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center">Consultar precios por WhatsApp</a>
+<div class="grid">
+<article class="card"><span class="num">01</span><h3>Depilación láser avanzada</h3><p>Resultados duraderos en rostro y cuerpo con tecnología láser de última generación.</p></article>
+<article class="card"><span class="num">02</span><h3>Faciales y limpieza profunda</h3><p>Limpia, hidrata y renueva tu piel con un facial adaptado a lo que necesita.</p></article>
+<article class="card"><span class="num">03</span><h3>Cosmetología especializada</h3><p>Tratamientos personalizados para manchas, acné, textura y luminosidad.</p></article>
+<article class="card"><span class="num">04</span><h3>Cuidado facial para hombres</h3><p>Faciales pensados para la piel masculina: limpieza, control de grasa e hidratación.</p></article>
+<article class="card"><span class="num">05</span><h3>Evaluación de la piel</h3><p>Analizamos tu piel y te recomendamos el plan de tratamiento ideal.</p></article>
+<article class="card"><span class="num">06</span><h3>Productos de belleza</h3><p>Productos profesionales para continuar tu rutina en casa.</p></article>
 </div>
 </div>
 </section>
 
-<section id="codigo" style="padding: 104px 24px 0">
-<div style="max-width: 760px; margin: 0 auto; background: #4E5438; color: #FFFFFF; border-radius: 28px; padding: 48px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #E9E7DA">¿Tienes un código de descuento?</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1.1">Canjea tu código</h2>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #F1F0E8; max-width: 520px">Escríbelo aquí para comprobarlo y canjéalo por WhatsApp al reservar. Cada código se puede usar una sola vez.</p>
-<form id="code-form" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; max-width: 520px; margin-top: 6px">
-<label for="code-input" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Código de descuento</label>
-<input id="code-input" type="text" autocomplete="off" placeholder="Ej.: ANA10-XXXXX" style="flex: 1 1 240px; min-width: 0; min-height: 52px; border-radius: 999px; border: 0; padding: 0 22px; font-size: 17px; font-family: Inter, sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #2F3322">
-<button type="submit" style="min-height: 52px; border-radius: 999px; border: 0; padding: 0 28px; font-size: 16px; font-weight: 600; background: #FFFFFF; color: #2F3322; cursor: pointer; font-family: Inter, sans-serif">Comprobar</button>
+<section class="section offers" id="ofertas">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">Ofertas y paquetes</p>
+<h2 class="title">Aprovecha nuestras <em>promociones</em></h2>
+<span class="ornament"></span>
+</div>
+<div class="grid">
+<article class="offer featured">
+<span class="tag">Viernes Negro · Tiempo limitado</span>
+<h3>Faciales</h3>
+<p class="price-row"><span class="price">RD$1,500</span><span class="old">RD$2,000</span></p>
+<p>Regálate ese facial que llevas tiempo posponiendo: renueva tu piel y disfruta un momento solo para ti.</p>
+<a class="btn" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20un%20facial%20con%20la%20oferta%20de%20Viernes%20Negro%20%28RD%241%2C500%29." target="_blank" rel="noopener">Reservar facial</a>
+</article>
+<article class="offer">
+<span class="tag">Láser Soprano Titanium</span>
+<h3>Tratamiento de hongos en las uñas</h3>
+<p class="price-row"><span class="price">RD$1,500</span><span class="per">por sesión</span></p>
+<p>Tratamiento láser contra la onicomicosis en manos y pies. Procedimiento rápido, sin tiempo de recuperación. Se recomienda evaluación previa.</p>
+<a class="btn btn-dark" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20tratamiento%20l%C3%A1ser%20para%20hongos%20en%20las%20u%C3%B1as%20%28RD%241%2C500%20por%20sesi%C3%B3n%29." target="_blank" rel="noopener">Reservar sesión</a>
+</article>
+<article class="offer">
+<span class="tag">Programa de puntos</span>
+<h3>Tarjeta de Fidelidad Anahias</h3>
+<p class="price-row"><span class="price" style="font-size:40px">15% y hasta 50% OFF</span></p>
+<p>Cada cita suma puntos. Completa tu tarjeta y desbloquea descuentos en tus próximas visitas.</p>
+<a class="btn btn-dark" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20mi%20Tarjeta%20de%20Fidelidad." target="_blank" rel="noopener">Pedir mi tarjeta</a>
+</article>
+</div>
+<div class="also">
+<div style="flex:1 1 420px;min-width:0">
+<h3>También te ofrecemos</h3>
+<p>Depilación láser · Hidrodermoabrasión facial profunda · Oxigenación facial · Terapia de luz LED · Sonda facial · Paleta ultrasónica · Eliminación de tatuajes</p>
+</div>
+<a class="btn btn-line" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20saber%20los%20precios%20de%20sus%20tratamientos." target="_blank" rel="noopener">Consultar precios por WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="codigo">
+<div class="wrap">
+<div class="code-box">
+<p class="eyebrow">¿Tienes un código de descuento?</p>
+<h2>Canjea tu código</h2>
+<p>Escríbelo aquí para comprobarlo y canjéalo por WhatsApp al reservar. Cada código se puede usar una sola vez.</p>
+<form id="code-form">
+<label for="code-input" class="sr-only">Código de descuento</label>
+<input id="code-input" type="text" autocomplete="off" placeholder="Ej.: ANA10-XXXXX">
+<button type="submit">Comprobar</button>
 </form>
-<div id="code-result" role="status" aria-live="polite" style="min-height: 24px; font-size: 16px; line-height: 1.6"></div>
-</div>
-</section>
-
-<section id="nosotros" style="background: #ECE9DF; padding: 104px 24px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px">
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B7151">Por qué Anahias</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 48px; line-height: 1.1">Un momento para ti, en manos expertas</h2>
-<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4A4E3C">En Anahias buscamos siempre la mejor manera de cuidar de ti. Evaluamos tu piel, te explicamos cada paso y diseñamos un tratamiento a tu medida, en un ambiente de confianza donde puedes relajarte.</p>
-</div>
-<div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px">
-<div style="background: #F6F4EE; border-radius: 16px; padding: 24px"><h3 style="margin: 0 0 8px; font-size: 17px">Atención personalizada</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Cada tratamiento se adapta a tu tipo de piel.</p></div>
-<div style="background: #F6F4EE; border-radius: 16px; padding: 24px"><h3 style="margin: 0 0 8px; font-size: 17px">Tecnología láser avanzada</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Depilación eficaz y cómoda, sesión tras sesión.</p></div>
-<div style="background: #F6F4EE; border-radius: 16px; padding: 24px"><h3 style="margin: 0 0 8px; font-size: 17px">Para ellas y para ellos</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">El cuidado de la piel también es cosa de hombres.</p></div>
-<div style="background: #F6F4EE; border-radius: 16px; padding: 24px"><h3 style="margin: 0 0 8px; font-size: 17px">Productos de calidad</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5B5F4C">Te recomendamos lo que tu piel necesita en casa.</p></div>
+<div id="code-result" role="status" aria-live="polite"></div>
 </div>
 </div>
 </section>
 
-<section id="equipo" style="padding: 104px 24px 0">
-<div style="max-width: 1000px; margin: 0 auto; background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 28px; padding: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
-<img src="georgina.jpg" alt="Georgina Arias Minaya, gerente de Anahias Esthetic" style="flex: 0 0 240px; width: 240px; height: 240px; border-radius: 50%; object-fit: cover; object-position: center; border: 6px solid #ECE9DF; margin: 0 auto; display: block">
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B7151">Conoce a nuestra gerente</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1.1">Georgina Arias Minaya</h2>
-<p style="margin: 0; font-size: 15px; font-weight: 600; color: #4E5438">Gerente y encargada de Anahias Esthetic</p>
-<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4A4E3C">Detrás de cada tratamiento hay una persona que ama lo que hace. Georgina está al frente de Anahias con una dedicación que se nota en cada detalle: es amable, detallista y siempre está aprendiendo procedimientos nuevos para ofrecerte lo mejor. Lo que más la apasiona es ver el cambio en sus clientes, y con su trato cálido hace que todos se sientan en confianza desde que llegan.</p>
-<p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #6B7151">«Cuidar tu piel es un acto de amor propio diario.»</p>
+<section class="section about" id="nosotros">
+<div class="wrap">
+<div class="about-text">
+<p class="eyebrow">Por qué Anahias</p>
+<h2 class="title">Un momento para ti, <em>en manos expertas</em></h2>
+<p class="lead">En Anahias buscamos siempre la mejor manera de cuidar de ti. Evaluamos tu piel, te explicamos cada paso y diseñamos un tratamiento a tu medida, en un ambiente de confianza donde puedes relajarte.</p>
+</div>
+<div class="perks">
+<div class="perk"><h3>Atención personalizada</h3><p>Cada tratamiento se adapta a tu tipo de piel.</p></div>
+<div class="perk"><h3>Tecnología láser avanzada</h3><p>Depilación eficaz y cómoda, sesión tras sesión.</p></div>
+<div class="perk"><h3>Para ellas y para ellos</h3><p>El cuidado de la piel también es cosa de hombres.</p></div>
+<div class="perk"><h3>Productos de calidad</h3><p>Te recomendamos lo que tu piel necesita en casa.</p></div>
 </div>
 </div>
 </section>
 
-<section id="horario" style="padding: 104px 24px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 36px">Horario</h2>
-<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #ECE9DF; padding-bottom: 12px"><span>Lunes a jueves</span><span style="font-weight: 600">8:00 a. m. – 7:00 p. m.</span></div>
-<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #ECE9DF; padding-bottom: 12px"><span>Viernes y sábado</span><span style="font-weight: 600">8:00 a. m. – 2:00 p. m.</span></div>
-<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; color: #5B5F4C"><span>Domingo</span><span>Cerrado</span></div>
+<section class="section" id="equipo">
+<div class="wrap">
+<div class="team">
+<img src="georgina.jpg" alt="Georgina Arias Minaya, gerente de Anahias Esthetic">
+<div class="team-text">
+<p class="eyebrow">Conoce a nuestra gerente</p>
+<h2>Georgina Arias Minaya</h2>
+<p class="team-role">Gerente y encargada de Anahias Esthetic</p>
+<p class="lead">Detrás de cada tratamiento hay una persona que ama lo que hace. Georgina está al frente de Anahias con una dedicación que se nota en cada detalle: es amable, detallista y siempre está aprendiendo procedimientos nuevos para ofrecerte lo mejor. Lo que más la apasiona es ver el cambio en sus clientes, y con su trato cálido hace que todos se sientan en confianza desde que llegan.</p>
+<p class="quote">«Cuidar tu piel es un acto de amor propio diario.»</p>
 </div>
-<div style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E2DFD3; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 36px">Dónde estamos</h2>
-<p style="margin: 0; font-size: 16px; line-height: 1.6">Plaza Megaeuro, calle Pedro Livio Cedeño</p>
-<a href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" style="font-weight: 600; font-size: 16px; min-height: 44px; display: inline-flex; align-items: center">Abrir en Google Maps →</a>
-</div>
-<div style="flex: 1 1 340px; min-width: 0; background: #4E5438; color: #FFFFFF; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 36px">Tu cita, a tiempo</h2>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #F1F0E8">Tu tiempo y el de tu cosmetóloga valen. Si no puedes asistir, avísanos con tiempo para reprogramar.</p>
 </div>
 </div>
 </section>
 
-<section id="contacto" style="background: #2F3322; color: #FFFFFF; padding: 104px 24px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 52px; line-height: 1.1">Reserva tu cita hoy</h2>
-<p style="margin: 0; font-size: 18px; color: #DCDBD0; max-width: 560px; line-height: 1.6">Escríbenos por WhatsApp y te ayudamos a elegir el tratamiento ideal para ti.</p>
-<a href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener" style="text-decoration: none; background: #FFFFFF; color: #2F3322; padding: 18px 34px; border-radius: 999px; font-weight: 600; font-size: 17px; min-height: 52px; display: inline-flex; align-items: center">WhatsApp: 809-783-8755</a>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; margin-top: 12px; font-size: 15px">
-<a href="https://www.instagram.com/anahiasesthetic/" target="_blank" rel="noopener" style="color: #FFFFFF; text-decoration: none; border: 1px solid #6B7151; border-radius: 999px; padding: 10px 20px; min-height: 44px; display: inline-flex; align-items: center; gap: 10px">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>
-@anahiasesthetic</a>
-<a href="https://www.tiktok.com/@anahiasestetic" target="_blank" rel="noopener" style="color: #FFFFFF; text-decoration: none; border: 1px solid #6B7151; border-radius: 999px; padding: 10px 20px; min-height: 44px; display: inline-flex; align-items: center; gap: 10px">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg>
-TikTok</a>
-<a href="https://www.facebook.com/share/1Anut4JSys/" target="_blank" rel="noopener" style="color: #FFFFFF; text-decoration: none; border: 1px solid #6B7151; border-radius: 999px; padding: 10px 20px; min-height: 44px; display: inline-flex; align-items: center; gap: 10px">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg>
-Facebook</a>
+<section class="section" id="visitanos" style="padding-top:0">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">Visítanos</p>
+<h2 class="title">Te esperamos en <em>Plaza Megaeuro</em></h2>
+<span class="ornament"></span>
+</div>
+<div class="visit">
+<div class="panel">
+<h2>Horario</h2>
+<div class="hours"><span>Lunes a jueves</span><b>8:00 a. m. – 7:00 p. m.</b></div>
+<div class="hours"><span>Viernes y sábado</span><b>8:00 a. m. – 2:00 p. m.</b></div>
+<div class="hours"><span>Domingo</span><span>Cerrado</span></div>
+</div>
+<div class="panel map">
+<h2>Dónde estamos</h2>
+<p>Plaza Megaeuro, calle Pedro Livio Cedeño</p>
+<a class="btn" href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Abrir en Google Maps</a>
+</div>
+<div class="panel note">
+<h2>Tu cita, a tiempo</h2>
+<p>Tu tiempo y el de tu cosmetóloga valen. Si no puedes asistir, avísanos con tiempo para reprogramar.</p>
+</div>
 </div>
 </div>
 </section>
 
-<footer style="background: #2F3322; color: #B9BBA4; border-top: 1px solid #454A34; padding: 24px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 13px">
+<section class="section contact" id="contacto">
+<div class="wrap">
+<img src="logo.jpg" alt="">
+<h2>Reserva tu cita hoy</h2>
+<p>Escríbenos por WhatsApp y te ayudamos a elegir el tratamiento ideal para ti.</p>
+<div class="actions">
+<a class="btn btn-light" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener">WhatsApp: 809-783-8755</a>
+<a class="btn btn-ghost" href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" target="_blank" rel="noopener">Cómo llegar</a>
+</div>
+<div class="social">
+<a href="https://www.instagram.com/anahiasesthetic/" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>@anahiasesthetic</a>
+<a href="https://www.tiktok.com/@anahiasestetic" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg>TikTok</a>
+<a href="https://www.facebook.com/share/1Anut4JSys/" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg>Facebook</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="wrap">
 <span>© 2026 Anahias Esthetic &amp; Beauty Supplier · Plaza Megaeuro</span>
-<nav aria-label="Redes sociales" style="display: flex; gap: 8px">
-<a href="https://www.instagram.com/anahiasesthetic/" target="_blank" rel="noopener" aria-label="Instagram" style="color: #DCDBD0; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg></a>
-<a href="https://www.tiktok.com/@anahiasestetic" target="_blank" rel="noopener" aria-label="TikTok" style="color: #DCDBD0; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg></a>
-<a href="https://www.facebook.com/share/1Anut4JSys/" target="_blank" rel="noopener" aria-label="Facebook" style="color: #DCDBD0; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg></a>
+<nav aria-label="Redes sociales">
+<a href="https://www.instagram.com/anahiasesthetic/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg></a>
+<a href="https://www.tiktok.com/@anahiasestetic" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.8 2.4 4.6 5 5"></path></svg></a>
+<a href="https://www.facebook.com/share/1Anut4JSys/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg></a>
+<a href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" target="_blank" rel="noopener" aria-label="Google Maps"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></a>
 </nav>
 </div>
 </footer>
+
+<div class="fab">
+<a class="map" href="https://maps.app.goo.gl/HBH5GME4HTNwBwRQ9" target="_blank" rel="noopener" aria-label="Cómo llegar en Google Maps"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></a>
+<a class="wa" href="https://wa.me/18097838755?text=Hola%20Anahias%2C%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20disponibilidad%20tienen%3F" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg></a>
 </div>
+
 <script>
 (function(){
 var API='https://script.google.com/macros/s/AKfycbw6Hubpx4yAQTL1zJaKvRjCso1vaV7TFfmyXPaWcbmZZ3vaxZJo2CSqDYRnI5BIdU_D/exec';
